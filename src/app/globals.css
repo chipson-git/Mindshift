@@ -1,0 +1,114 @@
+@import "tailwindcss";
+@import "@fontsource-variable/noto-sans-georgian";
+
+/* Calm, minimal palette: warm paper background, sage accent, soft lavender secondary. */
+:root {
+  --bg: #f7f5f0;
+  --surface: #ffffff;
+  --surface-muted: #efece5;
+  --text: #22262a;
+  --text-muted: #5d6468;
+  --border: #e3dfd6;
+  --accent: #4f7a68;
+  --accent-strong: #3d6353;
+  --accent-soft: #e2ece6;
+  --accent-contrast: #ffffff;
+  --lavender: #8b84b8;
+  --lavender-soft: #ebe9f5;
+  --danger: #a24b3c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15181a;
+    --surface: #1d2124;
+    --surface-muted: #24292c;
+    --text: #e8e6e1;
+    --text-muted: #a3a9ac;
+    --border: #2f3539;
+    --accent: #7fb39c;
+    --accent-strong: #9ccab5;
+    --accent-soft: #233630;
+    --accent-contrast: #10201a;
+    --lavender: #aaa4d6;
+    --lavender-soft: #2a2838;
+    --danger: #e08a7a;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-text: var(--text);
+  --color-muted: var(--text-muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-lavender: var(--lavender);
+  --color-lavender-soft: var(--lavender-soft);
+  --color-danger: var(--danger);
+  --font-sans: "Noto Sans Georgian Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+/* Reusable building blocks (usable as classes and with @apply) */
+@utility container-page {
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+}
+@utility card {
+  @apply rounded-2xl border border-border bg-surface p-5 sm:p-6;
+}
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-50;
+}
+@utility btn-primary {
+  @apply btn bg-accent text-accent-contrast hover:bg-accent-strong;
+}
+@utility btn-secondary {
+  @apply btn border border-border bg-surface text-text hover:bg-surface-muted;
+}
+@utility btn-ghost {
+  @apply btn text-muted hover:bg-surface-muted hover:text-text;
+}
+@utility input {
+  @apply w-full rounded-xl border border-border bg-surface px-4 py-2.5 text-text placeholder:text-muted focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25;
+}
+@utility label {
+  @apply mb-1.5 block text-sm font-medium;
+}
+@utility eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.14em] text-accent;
+}
+@utility chip {
+  @apply inline-flex items-center rounded-full bg-accent-soft px-2.5 py-0.5 text-xs font-medium text-accent-strong;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .breathe {
+    animation: breathe 8s ease-in-out infinite;
+  }
+  @keyframes breathe {
+    0%, 100% { transform: scale(0.92); opacity: 0.7; }
+    50% { transform: scale(1.04); opacity: 1; }
+  }
+}
+
+/* Georgian has no lowercase/uppercase pairs in everyday text: `uppercase` would switch to
+   Mtavruli capitals, which read poorly in small labels. */
+:lang(ka) .eyebrow {
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
