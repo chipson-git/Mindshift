@@ -37,9 +37,11 @@ export default async function LandingPage({ params }: PageProps<"/[locale]">) {
           </div>
         </div>
         <div className="relative mx-auto aspect-square w-full max-w-sm" aria-hidden="true">
-          <div className="breathe absolute inset-0 rounded-full bg-accent-soft" />
-          <div className="breathe absolute inset-[14%] rounded-full bg-secondary-soft [animation-delay:-2s]" />
-          <div className="absolute inset-[34%] rounded-full bg-surface shadow-sm" />
+          <div className="breathe absolute inset-0 rounded-full bg-accent" />
+          <div className="breathe absolute inset-[14%] rounded-full bg-highlight [animation-delay:-2s]" />
+          <div className="absolute inset-[34%] rounded-full bg-surface shadow-md" />
+          <div className="absolute top-[6%] right-[2%] size-[13%] rounded-full bg-success" />
+          <div className="absolute bottom-[10%] left-[4%] size-[9%] rounded-full bg-coral" />
         </div>
       </section>
 
