@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getDictionary, isLocale, LOCALES } from "@/lib/i18n";
 import { THEME_INIT_SCRIPT } from "@/lib/theme";
 import "../globals.css";
+import "@/games/games.css";
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));

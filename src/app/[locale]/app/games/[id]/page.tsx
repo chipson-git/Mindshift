@@ -1,11 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { FocusGame } from "@/components/games/FocusGame";
-import { MemoryGame } from "@/components/games/MemoryGame";
-import { ReflexGame } from "@/components/games/ReflexGame";
-import { ThoughtsGame } from "@/components/games/ThoughtsGame";
+import { GameHost } from "@/components/games/GameHost";
 import { Paywall } from "@/components/Paywall";
-import { GAMES, isGameId } from "@/lib/games";
+import { gameDef, isGameId } from "@/games";
 import { requireSessionPage } from "@/lib/page";
 import { hasFeature } from "@/lib/plans";
 
@@ -14,7 +11,7 @@ export default async function GamePage({ params }: PageProps<"/[locale]/app/game
   const { id } = await params;
   if (!isGameId(id)) notFound();
   const g = t.games;
-  const meta = GAMES.find((x) => x.id === id)!;
+  const meta = gameDef(id);
 
   return (
     <>
@@ -26,16 +23,10 @@ export default async function GamePage({ params }: PageProps<"/[locale]/app/game
         <h1 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">{g.list[id].name}</h1>
         <p className="mt-1.5 text-muted">{g.list[id].desc}</p>
       </header>
-      {!hasFeature(session.subscription.tier, "exercises") ? (
-        <Paywall locale={locale} t={t} feature="exercises" />
-      ) : id === "focus" ? (
-        <FocusGame t={g} />
-      ) : id === "memory" ? (
-        <MemoryGame t={g} />
-      ) : id === "reflex" ? (
-        <ReflexGame t={g} />
+      {hasFeature(session.subscription.tier, "exercises") ? (
+        <GameHost id={id} t={g} locale={locale} progressHref={`/${locale}/app/progress`} />
       ) : (
-        <ThoughtsGame t={g} locale={locale} />
+        <Paywall locale={locale} t={t} feature="exercises" />
       )}
     </>
   );

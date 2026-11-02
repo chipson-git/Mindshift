@@ -119,3 +119,21 @@ create policy "posts: delete own" on public.posts
   for delete using (auth.uid() = user_id);
 
 create index if not exists posts_created_at_idx on public.posts (created_at desc);
+
+-- Game results (personal leaderboard and progress charts) -----------------------
+-- The app keeps results in the browser for now; this table is ready for syncing them.
+create table if not exists public.game_results (
+  id bigint generated always as identity primary key,
+  user_id uuid not null references auth.users (id) on delete cascade,
+  game text not null,
+  score int not null check (score >= 0),
+  played_at timestamptz not null default now()
+);
+
+alter table public.game_results enable row level security;
+create policy "game results: read own" on public.game_results
+  for select using (auth.uid() = user_id);
+create policy "game results: insert own" on public.game_results
+  for insert with check (auth.uid() = user_id);
+
+create index if not exists game_results_user_game_idx on public.game_results (user_id, game, played_at desc);

@@ -48,7 +48,8 @@ Defined in `src/lib/plans.ts` (single source of truth for prices, features and A
 src/
   app/[locale]/(site)/   public pages: landing, pricing, login, signup, checkout
   app/[locale]/app/      members area: today, library, courses, create, coach, community, account
-  app/api/               coach + meditation streaming endpoints (Claude)
+  app/api/               assistant + meditation streaming endpoints (Claude)
+  games/                 game engine (framework-free): 10 games, personal leaderboard, progress charts
   lib/plans.ts           plans, entitlements, limits
   lib/backend/           storage: demo (cookie) and Supabase, same interface
   lib/ai/                prompts, safety checks, Claude client, demo replies
@@ -58,6 +59,15 @@ src/
 supabase/schema.sql      tables + Row Level Security
 tests/                   unit tests (vitest)
 ```
+
+## Games and progress
+
+Ten short training games across seven skills (focus, memory, speed, self-control, reframing,
+emotions, calm) live in `src/games`. The engine has no React dependency: the app mounts it with
+`GameHost`/`ProgressHost`, and the same code can be bundled for static pages. Each result is
+saved (browser storage for now, `game_results` table in `schema.sql` for later), and the
+Progress page shows a level per skill (average of the last 5 results, normalized to 0–100),
+the change versus the 5 before, a chart over time, and a personal top-5 per game.
 
 ## Safety
 
