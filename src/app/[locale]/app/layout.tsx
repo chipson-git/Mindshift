@@ -9,7 +9,7 @@ import { requireSessionPage } from "@/lib/page";
 export default async function AppLayout({ children, params }: LayoutProps<"/[locale]/app">) {
   const { locale, t, session, backend } = await requireSessionPage(params);
   return (
-    <div className="min-h-dvh md:grid md:grid-cols-[230px_1fr]">
+    <div className="min-h-dvh md:grid md:grid-cols-[260px_1fr]">
       <aside className="sticky top-0 z-20 border-b border-border bg-bg/90 backdrop-blur md:h-dvh md:border-r md:border-b-0">
         <div className="flex items-center justify-between px-4 pt-4 md:px-5 md:pt-6">
           <Logo href={`/${locale}/app`} />

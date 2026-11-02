@@ -1,21 +1,31 @@
 @import "tailwindcss";
 @import "@fontsource-variable/noto-sans-georgian";
 
-/* Calm, minimal palette: warm paper background, sage accent, soft lavender secondary. */
+/* Palette ("Happy"): blue #6e9ef5 = main accent (calm), navy #333366 = text and dark mode,
+   green #54b754 = progress and success, yellow #ffcc33 = small highlights, coral #ff6666 = rare emphasis.
+   Saturated colors are used in small areas; large surfaces stay neutral so the site feels calm. */
 :root {
-  --bg: #f7f5f0;
+  --bg: #f6f7fb;
   --surface: #ffffff;
-  --surface-muted: #efece5;
-  --text: #22262a;
-  --text-muted: #5d6468;
-  --border: #e3dfd6;
-  --accent: #4f7a68;
-  --accent-strong: #3d6353;
-  --accent-soft: #e2ece6;
-  --accent-contrast: #ffffff;
-  --lavender: #8b84b8;
-  --lavender-soft: #ebe9f5;
-  --danger: #a24b3c;
+  --surface-muted: #eceff7;
+  --text: #333366;
+  --text-muted: #5f6488;
+  --border: #dfe3ef;
+  --accent: #6e9ef5;
+  --accent-hover: #5b8ff2;
+  --accent-strong: #3466cc;
+  --accent-soft: #e4ecfd;
+  --accent-contrast: #1e1e45;
+  --secondary: #333366;
+  --secondary-soft: #fff3cc;
+  --success: #54b754;
+  --success-strong: #2b7d36;
+  --success-soft: #e3f3e3;
+  --highlight: #ffcc33;
+  --on-highlight: #333366;
+  --coral: #ff6666;
+  --coral-soft: #ffe3e3;
+  --danger: #c43c3c;
   color-scheme: light;
 }
 
@@ -23,37 +33,53 @@
    (stored as data-theme="light" | "dark" on <html>). */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #15181a;
-    --surface: #1d2124;
-    --surface-muted: #24292c;
-    --text: #e8e6e1;
-    --text-muted: #a3a9ac;
-    --border: #2f3539;
-    --accent: #7fb39c;
-    --accent-strong: #9ccab5;
-    --accent-soft: #233630;
-    --accent-contrast: #10201a;
-    --lavender: #aaa4d6;
-    --lavender-soft: #2a2838;
-    --danger: #e08a7a;
+    --bg: #16162e;
+    --surface: #1f1f3d;
+    --surface-muted: #29294d;
+    --text: #eceef8;
+    --text-muted: #a9abc9;
+    --border: #34345e;
+    --accent: #6e9ef5;
+    --accent-hover: #8ab0f8;
+    --accent-strong: #9dbcfa;
+    --accent-soft: #253259;
+    --accent-contrast: #16162e;
+    --secondary: #ffcc33;
+    --secondary-soft: #3a3424;
+    --success: #54b754;
+    --success-strong: #7fd07f;
+    --success-soft: #1f3a2a;
+    --highlight: #ffcc33;
+    --on-highlight: #333366;
+    --coral: #ff6666;
+    --coral-soft: #3d2430;
+    --danger: #ff8080;
     color-scheme: dark;
   }
 }
 
 :root[data-theme="dark"] {
-  --bg: #15181a;
-  --surface: #1d2124;
-  --surface-muted: #24292c;
-  --text: #e8e6e1;
-  --text-muted: #a3a9ac;
-  --border: #2f3539;
-  --accent: #7fb39c;
-  --accent-strong: #9ccab5;
-  --accent-soft: #233630;
-  --accent-contrast: #10201a;
-  --lavender: #aaa4d6;
-  --lavender-soft: #2a2838;
-  --danger: #e08a7a;
+  --bg: #16162e;
+  --surface: #1f1f3d;
+  --surface-muted: #29294d;
+  --text: #eceef8;
+  --text-muted: #a9abc9;
+  --border: #34345e;
+  --accent: #6e9ef5;
+  --accent-hover: #8ab0f8;
+  --accent-strong: #9dbcfa;
+  --accent-soft: #253259;
+  --accent-contrast: #16162e;
+  --secondary: #ffcc33;
+  --secondary-soft: #3a3424;
+  --success: #54b754;
+  --success-strong: #7fd07f;
+  --success-soft: #1f3a2a;
+  --highlight: #ffcc33;
+  --on-highlight: #333366;
+  --coral: #ff6666;
+  --coral-soft: #3d2430;
+  --danger: #ff8080;
   color-scheme: dark;
 }
 
@@ -65,11 +91,19 @@
   --color-muted: var(--text-muted);
   --color-border: var(--border);
   --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
   --color-accent-strong: var(--accent-strong);
   --color-accent-soft: var(--accent-soft);
   --color-accent-contrast: var(--accent-contrast);
-  --color-lavender: var(--lavender);
-  --color-lavender-soft: var(--lavender-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-soft: var(--secondary-soft);
+  --color-success: var(--success);
+  --color-success-strong: var(--success-strong);
+  --color-success-soft: var(--success-soft);
+  --color-highlight: var(--highlight);
+  --color-on-highlight: var(--on-highlight);
+  --color-coral: var(--coral);
+  --color-coral-soft: var(--coral-soft);
   --color-danger: var(--danger);
   --font-sans: "Noto Sans Georgian Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 }
@@ -96,7 +130,7 @@ body {
   @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-50;
 }
 @utility btn-primary {
-  @apply btn bg-accent text-accent-contrast hover:bg-accent-strong;
+  @apply btn bg-accent text-accent-contrast hover:bg-accent-hover;
 }
 @utility btn-secondary {
   @apply btn border border-border bg-surface text-text hover:bg-surface-muted;
@@ -111,7 +145,7 @@ body {
   @apply mb-1.5 block text-sm font-medium;
 }
 @utility eyebrow {
-  @apply text-xs font-semibold uppercase tracking-[0.14em] text-accent;
+  @apply text-xs font-semibold uppercase tracking-[0.14em] text-accent-strong;
 }
 @utility chip {
   @apply inline-flex items-center rounded-full bg-accent-soft px-2.5 py-0.5 text-xs font-medium text-accent-strong;

@@ -39,7 +39,7 @@ export default async function CheckoutPage({ params, searchParams }: PageProps<"
             <dd className="font-semibold">{plan.price[period]} ₾</dd>
           </div>
         </dl>
-        <p className="mt-6 rounded-xl bg-lavender-soft px-3 py-2 text-xs">{c.demoNotice}</p>
+        <p className="mt-6 rounded-xl bg-secondary-soft px-3 py-2 text-xs">{c.demoNotice}</p>
         <form action={subscribeAction} className="mt-6">
           <input type="hidden" name="locale" value={locale} />
           <input type="hidden" name="plan" value={plan.id} />

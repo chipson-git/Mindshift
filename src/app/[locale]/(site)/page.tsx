@@ -4,6 +4,13 @@ import { getBackend } from "@/lib/backend";
 import { resolveLocale } from "@/lib/page";
 
 const FEATURE_ICONS = ["♫", "▤", "◎", "✦"];
+// One palette color per feature card: blue, green, yellow, coral.
+const FEATURE_TONES = [
+  "bg-accent-soft text-accent-strong",
+  "bg-success-soft text-success-strong",
+  "bg-secondary-soft text-secondary",
+  "bg-coral-soft text-danger",
+];
 
 export default async function LandingPage({ params }: PageProps<"/[locale]">) {
   const { locale, t } = await resolveLocale(params);
@@ -31,7 +38,7 @@ export default async function LandingPage({ params }: PageProps<"/[locale]">) {
         </div>
         <div className="relative mx-auto aspect-square w-full max-w-sm" aria-hidden="true">
           <div className="breathe absolute inset-0 rounded-full bg-accent-soft" />
-          <div className="breathe absolute inset-[14%] rounded-full bg-lavender-soft [animation-delay:-2s]" />
+          <div className="breathe absolute inset-[14%] rounded-full bg-secondary-soft [animation-delay:-2s]" />
           <div className="absolute inset-[34%] rounded-full bg-surface shadow-sm" />
         </div>
       </section>
@@ -58,7 +65,7 @@ export default async function LandingPage({ params }: PageProps<"/[locale]">) {
         <div className="mt-8 grid gap-5 sm:grid-cols-2">
           {l.features.map((f, i) => (
             <div key={f.title} className="card flex gap-4">
-              <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-lavender-soft text-xl text-lavender" aria-hidden="true">
+              <span className={`flex size-11 shrink-0 items-center justify-center rounded-xl text-xl ${FEATURE_TONES[i]}`} aria-hidden="true">
                 {FEATURE_ICONS[i]}
               </span>
               <div>

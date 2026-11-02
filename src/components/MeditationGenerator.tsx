@@ -58,7 +58,7 @@ export function MeditationGenerator({
   return (
     <div className="space-y-6">
       <form onSubmit={generate} className="card space-y-5">
-        {demo && <p className="rounded-xl bg-lavender-soft px-3 py-2 text-xs">{t.demoNotice}</p>}
+        {demo && <p className="rounded-xl bg-secondary-soft px-3 py-2 text-xs">{t.demoNotice}</p>}
         <div>
           <label htmlFor="goal" className="label">{t.goal}</label>
           <textarea

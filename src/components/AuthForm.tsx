@@ -27,7 +27,7 @@ export function AuthForm({
   return (
     <div className="card mx-auto w-full max-w-md">
       <h1 className="text-2xl font-semibold tracking-tight">{mode === "login" ? t.loginTitle : t.signupTitle}</h1>
-      {demo && <p className="mt-2 rounded-xl bg-lavender-soft px-3 py-2 text-xs text-text">{t.demoNote}</p>}
+      {demo && <p className="mt-2 rounded-xl bg-secondary-soft px-3 py-2 text-xs text-text">{t.demoNote}</p>}
 
       <form action={formAction} className="mt-6 space-y-4">
         <input type="hidden" name="locale" value={locale} />

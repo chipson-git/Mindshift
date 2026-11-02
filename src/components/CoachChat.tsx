@@ -70,7 +70,7 @@ export function CoachChat({
   return (
     <div className="card flex h-[calc(100dvh-16rem)] min-h-[420px] flex-col p-0 sm:p-0">
       <div className="flex-1 space-y-3 overflow-y-auto p-4 sm:p-6" aria-live="polite">
-        {demo && <p className="rounded-xl bg-lavender-soft px-3 py-2 text-xs">{t.demoNotice}</p>}
+        {demo && <p className="rounded-xl bg-secondary-soft px-3 py-2 text-xs">{t.demoNotice}</p>}
         <Bubble role="assistant">{t.intro}</Bubble>
         {messages.map((m, i) => (
           <Bubble key={i} role={m.role}>

@@ -33,7 +33,7 @@ export default async function CoursesPage({ params }: PageProps<"/[locale]/app/c
               <h2 className="mt-3 font-semibold">{pick(course.title, locale)}</h2>
               <p className="mt-1 text-sm text-muted">{pick(course.summary, locale)}</p>
               <div className="mt-4 h-1.5 overflow-hidden rounded-full bg-surface-muted" aria-hidden="true">
-                <div className="h-full rounded-full bg-accent" style={{ width: `${pct}%` }} />
+                <div className="h-full rounded-full bg-success" style={{ width: `${pct}%` }} />
               </div>
               <p className="mt-1.5 text-xs text-muted">{fmt(c.progress, { done, total: course.lessons.length })}</p>
             </Link>

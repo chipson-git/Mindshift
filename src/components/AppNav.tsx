@@ -27,7 +27,7 @@ export function AppNav({ locale, t }: { locale: Locale; t: Dictionary["nav"] }) 
             key={item.key}
             href={href}
             aria-current={active ? "page" : undefined}
-            className={`flex shrink-0 items-center gap-2.5 rounded-xl px-3 py-2 text-sm transition-colors ${
+            className={`flex shrink-0 items-center gap-2.5 whitespace-nowrap rounded-xl px-3 py-2 text-sm transition-colors ${
               active ? "bg-accent-soft font-medium text-accent-strong" : "text-muted hover:bg-surface-muted hover:text-text"
             }`}
           >

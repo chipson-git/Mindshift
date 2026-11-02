@@ -22,7 +22,7 @@ export default async function LibraryPage({ params }: PageProps<"/[locale]/app/l
                 <span className="chip">{l.categories[item.category]}</span>
                 <span className="text-xs text-muted">{t.create.styles[item.kind]}</span>
                 <span className="text-xs text-muted">· {fmt(l.minutes, { n: item.minutes })}</span>
-                {item.free && !unlocked && <span className="chip bg-lavender-soft text-lavender">{l.free}</span>}
+                {item.free && !unlocked && <span className="chip bg-secondary-soft text-secondary">{l.free}</span>}
               </div>
               <h2 className="mt-3 font-semibold">{pick(item.title, locale)}</h2>
               <p className="mt-1 text-sm text-muted">{pick(item.summary, locale)}</p>

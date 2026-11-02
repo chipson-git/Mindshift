@@ -58,7 +58,7 @@ export default async function AccountPage({ params }: PageProps<"/[locale]/app/a
                     </span>
                   </div>
                   <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-surface-muted" aria-hidden="true">
-                    <div className="h-full rounded-full bg-accent" style={{ width: `${(used / limit) * 100}%` }} />
+                    <div className="h-full rounded-full bg-success" style={{ width: `${(used / limit) * 100}%` }} />
                   </div>
                 </div>
               );

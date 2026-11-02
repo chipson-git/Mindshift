@@ -54,7 +54,7 @@ export default async function CoursePage({ params }: PageProps<"/[locale]/app/co
                 <summary className="flex cursor-pointer list-none items-center gap-3">
                   <span
                     className={`flex size-8 shrink-0 items-center justify-center rounded-full text-sm font-semibold ${
-                      isDone ? "bg-accent text-accent-contrast" : "bg-surface-muted text-muted"
+                      isDone ? "bg-success text-accent-contrast" : "bg-surface-muted text-muted"
                     }`}
                   >
                     {isDone ? "✓" : i + 1}
@@ -82,7 +82,7 @@ export default async function CoursePage({ params }: PageProps<"/[locale]/app/co
                     )}
                   </div>
                   {isDone ? (
-                    <p className="font-medium text-accent-strong">{c.completed} ✓</p>
+                    <p className="font-medium text-success-strong">{c.completed} ✓</p>
                   ) : (
                     <form action={completeLessonAction}>
                       <input type="hidden" name="locale" value={locale} />

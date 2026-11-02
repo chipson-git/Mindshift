@@ -57,7 +57,7 @@ export function PricingTable({
               className={`card relative flex flex-col ${plan.highlighted ? "border-accent ring-1 ring-accent" : ""}`}
             >
               {plan.highlighted && (
-                <span className="chip absolute -top-3 left-6 bg-accent text-accent-contrast">{t.popular}</span>
+                <span className="chip absolute -top-3 left-6 bg-highlight text-on-highlight">{t.popular}</span>
               )}
               <h3 className="text-lg font-semibold">{t.planNames[id]}</h3>
               <p className="mt-1 min-h-12 text-sm text-muted">{t.planTaglines[id]}</p>
@@ -80,7 +80,7 @@ export function PricingTable({
                   }
                   return (
                     <li key={feature} className={`flex gap-2.5 ${included ? "" : "text-muted line-through opacity-60"}`}>
-                      <span aria-hidden="true" className={included ? "text-accent" : ""}>
+                      <span aria-hidden="true" className={included ? "text-success-strong" : ""}>
                         {included ? "✓" : "–"}
                       </span>
                       <span>

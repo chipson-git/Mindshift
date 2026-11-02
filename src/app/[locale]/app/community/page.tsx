@@ -41,7 +41,7 @@ export default async function CommunityPage({ params }: PageProps<"/[locale]/app
         {posts.map((post) => (
           <li key={post.id} className="card">
             <div className="flex items-center gap-3">
-              <span className="flex size-9 items-center justify-center rounded-full bg-lavender-soft text-sm font-semibold text-lavender" aria-hidden="true">
+              <span className="flex size-9 items-center justify-center rounded-full bg-secondary-soft text-sm font-semibold text-secondary" aria-hidden="true">
                 {post.authorName.slice(0, 1).toUpperCase() || "?"}
               </span>
               <div>

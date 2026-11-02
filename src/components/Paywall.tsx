@@ -6,7 +6,7 @@ export function Paywall({ locale, t, feature }: { locale: Locale; t: Dictionary;
   const plan = minimumPlanFor(feature);
   return (
     <div className="card flex flex-col items-center py-12 text-center">
-      <span className="flex size-12 items-center justify-center rounded-full bg-lavender-soft text-xl text-lavender" aria-hidden="true">
+      <span className="flex size-12 items-center justify-center rounded-full bg-secondary-soft text-xl text-secondary" aria-hidden="true">
         ✦
       </span>
       <h2 className="mt-4 text-xl font-semibold">{fmt(t.paywall.title, { plan: t.pricing.planNames[plan] })}</h2>

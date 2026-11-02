@@ -68,8 +68,8 @@ export default async function DashboardPage({ params }: PageProps<"/[locale]/app
               <span
                 key={day}
                 title={day}
-                className={`aspect-square rounded-[4px] ${activeDays.has(day) ? "bg-accent" : "bg-surface-muted"} ${
-                  day === today ? "ring-1 ring-accent ring-offset-1 ring-offset-surface" : ""
+                className={`aspect-square rounded-[4px] ${activeDays.has(day) ? "bg-success" : "bg-surface-muted"} ${
+                  day === today ? "ring-1 ring-success ring-offset-1 ring-offset-surface" : ""
                 }`}
               />
             ))}
@@ -89,7 +89,7 @@ export default async function DashboardPage({ params }: PageProps<"/[locale]/app
           ))}
         </ol>
         {doneToday ? (
-          <p className="mt-6 font-medium text-accent-strong">{d.done}</p>
+          <p className="mt-6 font-medium text-success-strong">{d.done}</p>
         ) : (
           <form action={completeExerciseAction} className="mt-6">
             <input type="hidden" name="locale" value={locale} />
