@@ -17,10 +17,6 @@ export function SiteHeader({ locale, t, signedIn }: { locale: Locale; t: Diction
           <Link href={`/${locale}/pricing`} className="btn-ghost hidden px-2.5 min-[400px]:inline-flex sm:px-3">
             {t.nav.pricing}
           </Link>
-          <Suspense>
-            <LocaleSwitcher locale={locale} />
-          </Suspense>
-          <ThemeToggle labels={t.theme} />
           {signedIn ? (
             <Link href={`/${locale}/app`} className="btn-primary px-3.5 sm:px-4">
               {t.nav.dashboard}
@@ -35,6 +31,12 @@ export function SiteHeader({ locale, t, signedIn }: { locale: Locale; t: Diction
               </Link>
             </>
           )}
+          <span className="ml-1 flex items-center gap-0.5 border-l border-border pl-1 sm:ml-2.5 sm:pl-2">
+            <Suspense>
+              <LocaleSwitcher locale={locale} />
+            </Suspense>
+            <ThemeToggle labels={t.theme} />
+          </span>
         </nav>
       </div>
     </header>
