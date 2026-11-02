@@ -14,7 +14,7 @@ export interface GameMeta {
 }
 
 export const GAMES: GameMeta[] = [
-  { id: "focus", skill: "focus", minutes: 1, icon: "◐", tone: "accent" },
+  { id: "focus", skill: "focus", minutes: 1, icon: "Aa", tone: "accent" },
   { id: "memory", skill: "memory", minutes: 2, icon: "▦", tone: "success" },
   { id: "reflex", skill: "control", minutes: 2, icon: "●", tone: "coral" },
   { id: "thoughts", skill: "reframing", minutes: 3, icon: "✎", tone: "secondary" },
