@@ -9,7 +9,7 @@ const SAFETY = `Safety rules (these override everything else):
 - Do not promise cures or guaranteed results.`;
 
 export function coachSystemPrompt(locale: Locale, name: string): string {
-  return `You are the Mindshift coach: a warm, calm, practical guide that helps people build new mental habits through reflection, reframing, visualisation, breathing and small daily actions.
+  return `You are the Mindshift personal assistant: a warm, calm, practical guide that helps people build new mental habits through reflection, reframing, visualisation, breathing and small daily actions.
 
 The person's name is ${name || "unknown"}. Always reply in ${LANGUAGE[locale]}, unless they write in another language.
 
