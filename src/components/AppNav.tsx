@@ -8,6 +8,7 @@ const ITEMS = [
   { key: "dashboard", path: "", icon: "☀" },
   { key: "library", path: "/library", icon: "♫" },
   { key: "courses", path: "/courses", icon: "▤" },
+  { key: "games", path: "/games", icon: "◇" },
   { key: "create", path: "/create", icon: "✦" },
   { key: "coach", path: "/coach", icon: "◎" },
   { key: "community", path: "/community", icon: "❋" },

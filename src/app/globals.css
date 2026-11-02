@@ -26,6 +26,11 @@
   --coral: #ff6666;
   --coral-soft: #ffe3e3;
   --danger: #c43c3c;
+  /* Ink colors for the Color focus game (readable as text on light surfaces). */
+  --ink-blue: #3466cc;
+  --ink-green: #2b7d36;
+  --ink-red: #c43c3c;
+  --ink-yellow: #b38600;
   color-scheme: light;
 }
 
@@ -54,6 +59,10 @@
     --coral: #ff6666;
     --coral-soft: #3d2430;
     --danger: #ff8080;
+    --ink-blue: #8ab0f8;
+    --ink-green: #6fcf6f;
+    --ink-red: #ff8080;
+    --ink-yellow: #ffcc33;
     color-scheme: dark;
   }
 }
@@ -80,6 +89,10 @@
   --coral: #ff6666;
   --coral-soft: #3d2430;
   --danger: #ff8080;
+  --ink-blue: #8ab0f8;
+  --ink-green: #6fcf6f;
+  --ink-red: #ff8080;
+  --ink-yellow: #ffcc33;
   color-scheme: dark;
 }
 

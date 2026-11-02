@@ -99,6 +99,17 @@ export default async function DashboardPage({ params }: PageProps<"/[locale]/app
         )}
       </section>
 
+      <Link href={`/${locale}/app/games`} className="card mt-5 flex items-center gap-4 transition-colors hover:border-accent">
+        <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-success-soft text-xl text-success-strong" aria-hidden="true">
+          ◇
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block font-semibold">{t.games.dashboardCta}</span>
+          <span className="block text-sm text-muted">{t.games.dashboardText}</span>
+        </span>
+        <span className="text-muted" aria-hidden="true">→</span>
+      </Link>
+
       {courseInProgress && (
         <Link
           href={`/${locale}/app/courses/${courseInProgress.course.slug}`}
