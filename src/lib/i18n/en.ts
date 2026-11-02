@@ -41,7 +41,7 @@ export const en = {
       { title: "Meditation", body: "An audio library for sleep, anxiety, confidence and focus, plus sessions written just for you." },
       { title: "Structured courses", body: "Multi-day programs that build one skill at a time, with a clear next step every day." },
       { title: "Daily practice", body: "A new exercise every day and a tracker that shows your streak." },
-      { title: "AI coach", body: "Talk through a hard moment or plan your week with a coach that knows your goals, any time." },
+      { title: "Personal assistant", body: "Talk through a hard moment or plan your week with a coach that knows your goals, any time." },
     ],
     scienceTitle: "Why repetition works",
     scienceBody:
