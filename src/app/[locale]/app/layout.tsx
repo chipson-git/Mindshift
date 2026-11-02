@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { AppNav } from "@/components/AppNav";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
 import { Logo } from "@/components/Logo";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { signOutAction } from "@/lib/actions";
 import { requireSessionPage } from "@/lib/page";
 
@@ -12,10 +13,11 @@ export default async function AppLayout({ children, params }: LayoutProps<"/[loc
       <aside className="sticky top-0 z-20 border-b border-border bg-bg/90 backdrop-blur md:h-dvh md:border-r md:border-b-0">
         <div className="flex items-center justify-between px-4 pt-4 md:px-5 md:pt-6">
           <Logo href={`/${locale}/app`} />
-          <div className="md:hidden">
+          <div className="flex items-center md:hidden">
             <Suspense>
               <LocaleSwitcher locale={locale} />
             </Suspense>
+            <ThemeToggle labels={t.theme} />
           </div>
         </div>
         <div className="px-3 py-3 md:mt-6 md:px-3">
@@ -31,6 +33,7 @@ export default async function AppLayout({ children, params }: LayoutProps<"/[loc
             <Suspense>
               <LocaleSwitcher locale={locale} />
             </Suspense>
+            <ThemeToggle labels={t.theme} />
           </div>
           {backend.mode === "demo" && <p className="text-xs text-muted">{t.account.demoMode}</p>}
         </div>

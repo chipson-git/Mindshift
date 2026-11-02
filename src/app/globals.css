@@ -16,10 +16,13 @@
   --lavender: #8b84b8;
   --lavender-soft: #ebe9f5;
   --danger: #a24b3c;
+  color-scheme: light;
 }
 
+/* Dark theme: follows the device unless the visitor picked one with the toggle
+   (stored as data-theme="light" | "dark" on <html>). */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #15181a;
     --surface: #1d2124;
     --surface-muted: #24292c;
@@ -33,7 +36,25 @@
     --lavender: #aaa4d6;
     --lavender-soft: #2a2838;
     --danger: #e08a7a;
+    color-scheme: dark;
   }
+}
+
+:root[data-theme="dark"] {
+  --bg: #15181a;
+  --surface: #1d2124;
+  --surface-muted: #24292c;
+  --text: #e8e6e1;
+  --text-muted: #a3a9ac;
+  --border: #2f3539;
+  --accent: #7fb39c;
+  --accent-strong: #9ccab5;
+  --accent-soft: #233630;
+  --accent-contrast: #10201a;
+  --lavender: #aaa4d6;
+  --lavender-soft: #2a2838;
+  --danger: #e08a7a;
+  color-scheme: dark;
 }
 
 @theme inline {

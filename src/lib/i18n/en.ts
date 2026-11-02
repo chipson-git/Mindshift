@@ -208,6 +208,10 @@ export const en = {
     body: "Upgrade your plan to unlock this section.",
     upgrade: "See plans",
   },
+  theme: {
+    toDark: "Switch to dark mode",
+    toLight: "Switch to light mode",
+  },
   common: {
     loading: "Loading…",
     save: "Save",
