@@ -51,7 +51,7 @@ export const en = {
       { q: "Is this therapy?", a: "No. Mindshift is a self-development tool. It does not replace a psychologist, psychiatrist or doctor." },
       { q: "Can I cancel any time?", a: "Yes. You can cancel from your account page and keep access until the end of the paid period." },
       { q: "Which language is the content in?", a: "Georgian and English. You can switch at any time." },
-      { q: "How is the content made?", a: "Sessions and replies are written by the personal assistant (AI), following guidelines we set. Treat them as support, not as professional advice." },
+      { q: "How is the content made?", a: "Sessions and replies are written by the personal assistant, following guidelines we set. Treat them as support, not as professional advice." },
     ],
     finalTitle: "Your first shift starts today",
     finalBody: "Pick a plan and do your first practice in under ten minutes.",
